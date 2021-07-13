@@ -6,6 +6,20 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background: var(--main-bg-color);
   color: var(--main-font-color);
+  font-family: ShareTechMono;
+}
+
+html,
+body,
+body > div:first-child,
+div#__next,
+div#__next > div {
+  height: 100%;
+}
+
+@font-face {
+  font-family: "ShareTechMono";
+  src: url("/ShareTechMono-Regular.ttf");
 }
 
 a {

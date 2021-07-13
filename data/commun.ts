@@ -1,3 +1,3 @@
 export const communData = {
-  siteName: "FBMecanix",
+  siteName: "INOV ~ MECA",
 };
