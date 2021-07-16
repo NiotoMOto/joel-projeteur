@@ -1,4 +1,13 @@
 .layoutContainer {
   padding: 0;
   margin: 0;
+  padding-top: 72px;
+}
+
+.content {
+  padding: 10px;
+}
+
+.noPadding {
+  padding: 0;
 }

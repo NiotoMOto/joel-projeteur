@@ -7,17 +7,30 @@
 .title {
   color: var(--white);
   text-align: center;
-  font-size: 65px;
+  font-size: 40px;
+  white-space: nowrap;
   animation: focus-in-contract-bck 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
+.subtitle {
+  color: var(--accent);
+}
+
+@media (min-width: 600px) {
+  .title {
+    font-size: 65px;
+  }
+}
+
 .titleContainer {
-  height: calc(100vh);
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(rgba(0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("/homeBackground.jpeg");
+  background-size: cover;
 }
 
 @keyframes focus-in-contract-bck {

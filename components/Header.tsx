@@ -8,33 +8,38 @@ export const Header = () => {
     <>
       <div className={styles.mobileMenu}>
         <Menu>
-          <Link href="/contact">
+          <Link passHref href="/contact">
             <a> Me contacter</a>
           </Link>
-          <Link href="/tarification">
+          <Link passHref href="/prix">
             <a> Prix</a>
           </Link>
-          <Link href="/histoire">
-            <a> Un peu d'histoire</a>
+          <Link passHref href="/parcours">
+            <a> Parour</a>
           </Link>
         </Menu>
       </div>
       <div className={styles.desktopMenu}>
         <nav className={styles.nav}>
           <ul className={styles.navList}>
-            <Link href="/contact">
+            <Link passHref href="/">
               <li className={styles.navItem}>
                 <a className={styles.navLink}> Me contacter</a>
               </li>
             </Link>
-            <Link href="/tarification">
+            <Link passHref href="/contact">
+              <li className={styles.navItem}>
+                <a className={styles.navLink}> Me contacter</a>
+              </li>
+            </Link>
+            <Link passHref href="/prix">
               <li className={styles.navItem}>
                 <a className={styles.navLink}> Prix</a>
               </li>
             </Link>
-            <Link href="/histoire">
+            <Link passHref href="/parcours">
               <li className={styles.navItem}>
-                <a className={styles.navLink}> Un peu d'histoire</a>
+                <a className={styles.navLink}> Parcours</a>
               </li>
             </Link>
           </ul>

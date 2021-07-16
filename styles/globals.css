@@ -32,11 +32,12 @@ a {
 }
 
 :root {
-  --main-bg-color: #86a3d1;
-  --secondary-bg-color: #545454;
+  --main-bg-color: #70a4dd;
+  --secondary-bg-color: #5b5ca7;
   --main-font-color: #141414;
-  --accent: #4f7dc7;
+  --accent: #9d959e;
+  --accent-dark: #292c4a;
   --red: #e73737;
-  --white: #fff;
+  --white: #edede8;
   --black: #141414;
 }
