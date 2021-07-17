@@ -2,11 +2,17 @@
   .desktopMenu {
     display: none;
   }
+  .mobileMenu {
+    justify-content: center;
+  }
 }
 
 @media (min-width: 600px) {
   .mobileMenu {
     display: none;
+  }
+  .desktopMenu {
+    display: flex;
   }
 }
 
@@ -38,6 +44,13 @@
   margin-right: 30px;
 }
 
+.brand {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0 15px;
+  font-weight: 600;
+}
+
 .navLink {
   display: inline-block;
   width: 100%;
@@ -62,4 +75,9 @@
   opacity: 1;
   transform: scale(1, 1);
   background: var(--accent);
+}
+
+.content {
+  display: flex;
+  justify-content: center;
 }

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { TimeLine } from "../components/TimeLine";
 import { Layout } from "../components/Layout";
-import some from "lodash/some";
+import flatten from "lodash/fp/flatten";
+import flow from "lodash/fp/flow";
+import uniq from "lodash/fp/uniq";
 
 export default function Parcours() {
   const items = [
@@ -31,6 +33,10 @@ export default function Parcours() {
     },
   ];
   const [currentSkils, setCurretnItems] = useState(items);
+
+  const [availableSkills, setAvailableSkills] = useState(
+    flow(flatten, uniq)(items.map((i) => i.skills))
+  );
   const [skillFiltred, setSkillFiltred] = useState<string[]>([]);
 
   const updatedTimeLine = (sills: string[]) => {
@@ -47,6 +53,7 @@ export default function Parcours() {
       const newSkills = [...skillFiltred, skill];
       setSkillFiltred(newSkills);
       updatedTimeLine(newSkills);
+      updateAvailableSkills();
     } else {
       removeSkill(skill);
     }
@@ -56,10 +63,20 @@ export default function Parcours() {
     const newSkills = skillFiltred.filter((s) => s !== skill);
     setSkillFiltred(newSkills);
     updatedTimeLine(newSkills);
+    updateAvailableSkills();
+  };
+
+  const updateAvailableSkills = () => {
+    setAvailableSkills(
+      flow(
+        flatten,
+        uniq
+      )(items.map((i) => i.skills)).filter((s) => !skillFiltred.includes(s))
+    );
   };
 
   return (
-    <Layout>
+    <Layout noPadding={false}>
       <div>
         <h1>Mon parcours</h1>
         <div>

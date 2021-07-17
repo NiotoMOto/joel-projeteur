@@ -32,10 +32,10 @@ a {
 }
 
 :root {
-  --main-bg-color: #70a4dd;
+  --main-bg-color: #000000;
   --secondary-bg-color: #5b5ca7;
   --main-font-color: #141414;
-  --accent: #9d959e;
+  --accent: #4c5fd5;
   --accent-dark: #292c4a;
   --red: #e73737;
   --white: #edede8;

@@ -9,15 +9,12 @@ type LayoutProps = {
 };
 
 export const Layout = ({ children, noPadding }: LayoutProps) => {
+  console.log(noPadding);
   return (
-    <div
-      className={classnames(styles.layoutContainer, styles.noPadding, {
-        [styles.noPadding]: noPadding,
-      })}
-    >
+    <div className={styles.layoutContainer}>
       <Header />
       <div
-        className={classnames(styles.layoutContent, styles.noPadding, {
+        className={classnames(styles.content, {
           [styles.noPadding]: noPadding,
         })}
       >
