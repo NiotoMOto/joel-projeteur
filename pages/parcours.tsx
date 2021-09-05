@@ -5,6 +5,8 @@ import flatten from "lodash/fp/flatten";
 import flow from "lodash/fp/flow";
 import uniq from "lodash/fp/uniq";
 
+import Head from "next/head";
+
 export default function Parcours() {
   const items = [
     {
@@ -76,18 +78,23 @@ export default function Parcours() {
   };
 
   return (
-    <Layout noPadding={false}>
-      <div>
-        <h1>Mon parcours</h1>
+    <>
+      <Head>
+        <meta key="no-folow" name="robots" content="noindex, follow" />
+      </Head>
+      <Layout noPadding={false}>
         <div>
-          {skillFiltred.map((skill) => (
-            <span key={skill} onClick={() => removeSkill(skill)}>
-              {skill}
-            </span>
-          ))}
+          <h1>Mon parcours</h1>
+          <div>
+            {skillFiltred.map((skill) => (
+              <span key={skill} onClick={() => removeSkill(skill)}>
+                {skill}
+              </span>
+            ))}
+          </div>
+          <TimeLine onClickSkill={onClickSkill} items={currentSkils} />
         </div>
-        <TimeLine onClickSkill={onClickSkill} items={currentSkils} />
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 }

@@ -11,9 +11,9 @@
   white-space: nowrap;
 }
 
-.subtitle {
+/* .subtitle {
   color: var(--accent);
-}
+} */
 
 @media (min-width: 600px) {
   .title {
@@ -27,8 +27,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(rgba(0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("/homeBackground.jpeg");
+
   background-size: cover;
 }
 
