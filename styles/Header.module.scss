@@ -1,4 +1,6 @@
-@media (max-width: 600px) {
+@import './variables';
+
+@media (max-width: $mobile-width) {
   .desktopMenu {
     display: none;
   }
@@ -7,7 +9,7 @@
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: $mobile-width) {
   .mobileMenu {
     display: none;
   }
@@ -25,8 +27,15 @@
   width: 100%;
   height: 73px;
   line-height: 70px;
-  background: var(--black);
+  background: var(--main-bg-color);
   color: var(--white);
+}
+
+.desktopMenu {
+  .nav {
+    display: flex;
+    margin: 0;
+  }
 }
 
 .nav {

@@ -1,0 +1,70 @@
+@import "./variables";
+
+.container {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.title {
+  color: var(--white);
+  text-align: center;
+  font-size: 40px;
+  font-weight: 300;
+  & {
+    @media (min-width: $mobile-width) {
+      font-size: 65px;
+    }
+  }
+}
+
+.titleContainer {
+  margin-top: 30vh;
+  margin-bottom: 30vh;
+  white-space: normal;
+  & {
+    @media (min-width: $mobile-width) {
+      width: 70%;
+    }
+  }
+}
+
+.productsContainer {
+  @media (min-width: $mobile-width) {
+    display: flex;
+  }
+}
+
+.productSection {
+  color: var(--black);
+  background: var(--white);
+  font-size: 20px;
+  padding: 50px 50px;
+  width: 100%;
+  @media (min-width: $mobile-width) {
+    padding: 120px 50px;
+    width: 50%;
+    font-size: 25px;
+  }
+}
+
+.proTitle,
+.particulierTitle {
+  text-underline-offset: 5px;
+}
+
+.proTitle {
+  text-decoration: underline var(--pro);
+}
+
+.particulierTitle {
+  text-decoration: underline var(--particulier);
+}
+
+.proWord {
+  color: var(--pro);
+}
+
+.particulierWord {
+  color: var(--particulier);
+}

@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import styles from "../styles/Header.module.css";
+import styles from "../styles/Header.module.scss";
 import { slide as Menu } from "react-burger-menu";
+import { communData } from "../data/commun";
 
 export const Header = () => {
   return (
@@ -10,19 +11,19 @@ export const Header = () => {
         <div className={styles.content}>
           <Link passHref href="/">
             <li className={styles.brand}>
-              <a> IM</a>
+              <a> {communData.siteName}</a>
             </li>
           </Link>
         </div>
         <Menu>
-          <Link passHref href="/contact">
-            <a> Me contacter</a>
+          <Link passHref href="/pro">
+            <a> Professionnels</a>
           </Link>
-          <Link passHref href="/prix">
-            <a> Prix</a>
+          <Link passHref href="/particulier">
+            <a> Particuliers</a>
           </Link>
           <Link passHref href="/parcours">
-            <a> Parour</a>
+            <a> Parcours</a>
           </Link>
         </Menu>
       </div>
@@ -34,14 +35,14 @@ export const Header = () => {
         </Link>
         <nav className={styles.nav}>
           <ul className={styles.navList}>
-            <Link passHref href="/contact">
+            <Link passHref href="/pro">
               <li className={styles.navItem}>
-                <a className={styles.navLink}> Me contacter</a>
+                <a className={styles.navLink}>Professionnels</a>
               </li>
             </Link>
-            <Link passHref href="/prix">
+            <Link passHref href="/particulier">
               <li className={styles.navItem}>
-                <a className={styles.navLink}> Prix</a>
+                <a className={styles.navLink}> Particuliers</a>
               </li>
             </Link>
             <Link passHref href="/parcours">

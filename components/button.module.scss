@@ -1,0 +1,11 @@
+.button {
+  border-radius: 300px;
+  background: var(--main-bg-color);
+  display: inline-block;
+  color: var(--white);
+  padding: 5px 20px;
+  cursor: pointer;
+  &:hover {
+    background: var(--black);
+  }
+}

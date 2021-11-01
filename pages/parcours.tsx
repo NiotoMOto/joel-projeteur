@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { TimeLine } from "../components/TimeLine";
 import { Layout } from "../components/Layout";
 import flatten from "lodash/fp/flatten";
 import flow from "lodash/fp/flow";
@@ -92,7 +91,6 @@ export default function Parcours() {
               </span>
             ))}
           </div>
-          <TimeLine onClickSkill={onClickSkill} items={currentSkils} />
         </div>
       </Layout>
     </>

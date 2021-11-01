@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "./Header";
 import classnames from "classnames";
-import styles from "../styles/Layout.module.css";
+import styles from "../styles/Layout.module.scss";
 
 type LayoutProps = {
   children: React.ReactChild;
@@ -9,10 +9,9 @@ type LayoutProps = {
 };
 
 export const Layout = ({ children, noPadding }: LayoutProps) => {
-  console.log(noPadding);
   return (
     <div className={styles.layoutContainer}>
-      {/* <Header /> */}
+      <Header />
       <div
         className={classnames(styles.content, {
           [styles.noPadding]: noPadding,

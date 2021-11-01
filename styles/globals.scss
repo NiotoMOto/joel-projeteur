@@ -6,7 +6,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background: var(--main-bg-color);
   color: var(--main-font-color);
-  font-family: ShareTechMono;
+  font-family: Poppins;
 }
 
 html,
@@ -18,8 +18,8 @@ div#__next > div {
 }
 
 @font-face {
-  font-family: "ShareTechMono";
-  src: url("/ShareTechMono-Regular.ttf");
+  font-family: "Poppins";
+  src: url("../public/fonts//Poppins-Regular.ttf");
 }
 
 a {
@@ -40,4 +40,6 @@ a {
   --red: #e73737;
   --white: #edede8;
   --black: #141414;
+  --particulier: #ed7d31;
+  --pro: #10109e;
 }
