@@ -11,7 +11,7 @@ export const Header = () => {
         <div className={styles.content}>
           <Link passHref href="/">
             <li className={styles.brand}>
-              <a> {communData.siteName}</a>
+              <a href="/"> {communData.siteName}</a>
             </li>
           </Link>
         </div>

@@ -1,8 +1,8 @@
 import Link from "next/link";
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 import styles from "./button.module.scss";
 
-export const Button = ({
+export const ButtonLink = ({
   children,
   href,
 }: {
@@ -13,5 +13,18 @@ export const Button = ({
     <Link href={href}>
       <a className={styles.button}>{children}</a>
     </Link>
+  );
+};
+
+export const Button = ({
+  children,
+  ...rest
+}: {
+  children: React.ReactNode;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>) => {
+  return (
+    <button {...rest} className={styles.button}>
+      {children}
+    </button>
   );
 };
