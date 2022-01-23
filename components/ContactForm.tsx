@@ -13,7 +13,9 @@ const encode = (data: {
   return Object.keys(data)
     .map(
       (key) =>
-        encodeURIComponent(key) + "=" + encodeURIComponent(data[key] as string)
+        encodeURIComponent(key) +
+        "=" +
+        encodeURIComponent((data as any)[key] as any)
     )
     .join("&");
 };
