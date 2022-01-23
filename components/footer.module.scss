@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  color: var(--white);
+  flex-direction: column;
+  padding: 20px;
+}
+.description {
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}
+.links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+}

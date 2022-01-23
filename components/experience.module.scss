@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titleContainer {
+  width: 280px;
+}
+.title {
+  font-size: 21px;
+}
+
+.link {
+  color: var(--pro);
+}
+
+.time {
+  width: 250px;
+  margin-right: 16px;
+}
+
+.dates {
+  font-weight: 600;
+}
+
+.description {
+  margin: 0;
+}

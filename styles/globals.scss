@@ -32,7 +32,7 @@ a {
 }
 
 :root {
-  --main-bg-color: #000000;
+  --main-bg-color: rgb(41, 41, 41);
   --secondary-bg-color: #5b5ca7;
   --main-font-color: #141414;
   --accent: #4c5fd5;
@@ -42,4 +42,5 @@ a {
   --black: #141414;
   --particulier: #ed7d31;
   --pro: #10109e;
+  --color-text: hsla(0, 0%, 0%, 0.8);
 }

@@ -1,0 +1,19 @@
+.wrapper {
+  background: var(--white);
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.container {
+  max-width: 960px;
+  color: var(--color-text);
+  width: 100%;
+  font-weight: 400;
+}
+
+.title {
+  padding-left: 29px;
+}

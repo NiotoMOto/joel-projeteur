@@ -8,7 +8,7 @@
 
 .title {
   color: var(--white);
-  text-align: center;
+  padding-left: 20px;
   font-size: 40px;
   font-weight: 300;
   & {
@@ -19,8 +19,8 @@
 }
 
 .titleContainer {
-  margin-top: 30vh;
-  margin-bottom: 30vh;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
   white-space: normal;
   & {
     @media (min-width: $mobile-width) {
