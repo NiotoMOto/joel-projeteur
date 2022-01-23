@@ -16,13 +16,13 @@ export const Header = () => {
           </Link>
         </div>
         <Menu>
-          <Link passHref href="/pro">
+          <Link key="pro" passHref href="/pro">
             <a> Professionnels</a>
           </Link>
-          <Link passHref href="/particulier">
+          <Link key="particulier" passHref href="/particulier">
             <a> Particuliers</a>
           </Link>
-          <Link passHref href="/parcours">
+          <Link key="parcours" passHref href="/parcours">
             <a> Parcours</a>
           </Link>
         </Menu>
@@ -35,17 +35,17 @@ export const Header = () => {
         </Link>
         <nav className={styles.nav}>
           <ul className={styles.navList}>
-            <Link passHref href="/pro">
+            <Link key="pro" passHref href="/pro">
               <li className={styles.navItem}>
                 <a className={styles.navLink}>Professionnels</a>
               </li>
             </Link>
-            <Link passHref href="/particulier">
+            <Link key="particulier" passHref href="/particulier">
               <li className={styles.navItem}>
                 <a className={styles.navLink}> Particuliers</a>
               </li>
             </Link>
-            <Link passHref href="/parcours">
+            <Link key="parcours" passHref href="/parcours">
               <li className={styles.navItem}>
                 <a className={styles.navLink}> Parcours</a>
               </li>

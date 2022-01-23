@@ -35,6 +35,7 @@ export const Experience = ({ experience }: ExperienceProps) => (
                 className={style.link}
                 href={experience.client.href}
                 target="_blank"
+                rel="noreferrer"
               >
                 {experience.client.name}
               </a>
@@ -43,8 +44,10 @@ export const Experience = ({ experience }: ExperienceProps) => (
         </div>
       </div>
       <div className={style.content}>
-        {experience.descriptions.map((description) => (
-          <p className={style.description}>{description}</p>
+        {experience.descriptions.map((description, key) => (
+          <p key={key} className={style.description}>
+            {description}
+          </p>
         ))}
       </div>
     </div>
