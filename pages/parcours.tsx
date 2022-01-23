@@ -1,95 +1,106 @@
 import React, { useState } from "react";
 import { Layout } from "../components/Layout";
-import flatten from "lodash/fp/flatten";
-import flow from "lodash/fp/flow";
-import uniq from "lodash/fp/uniq";
+import style from "../styles/Parcours.module.scss";
 
 import Head from "next/head";
+import { Experience } from "../components/Experience";
+import { Hr } from "../components/Hr";
 
 export default function Parcours() {
   const items = [
     {
-      title: "Projeteur",
-      dates: "Janvier 2019 - Aout 2021",
-      subTitle: "Eragny",
-      text: "Dessins sur solid works",
-      skills: ["solidworks", "excel", "autocad"],
-      id: 1,
+      title: "Dessinateur industriel CAO",
+      dates: "juin 2020 - août 2021",
+      duration: "1 ans 2 mois",
+      place: "Andrésy",
+      client: {
+        name: "HYDAC Group",
+        href: "https://www.hydac.com/en/",
+      },
+      descriptions: [
+        "Unique dessinateur au sein du bureau d'étude.",
+        "Conception d'équipements hydraulique pour divers clients : Chantier de l'Atlantique (ex : STX), General Electric, ...",
+        " Conception 3D sous Solidworks / Mise en plan / Création d'outils d'optimisation de la conception (Pilotage Excel / VBA Solidworks)",
+      ],
+      id: 5,
     },
     {
-      title: "Projeteur",
-      dates: "Janvier 2019 - Aout 2021",
-      subTitle: "Eragny",
-      text: "Dessins sur solid works",
-      skills: ["katia"],
+      title: "Dessinateur industriel CAO",
+      dates: "septembre 2019 - juin 2020",
+      duration: "10 mois",
+      place: "Conflans-Sainte-Honorine",
+      client: {
+        name: "AXEAU",
+        href: "http://www.axeau.fr/",
+      },
+      descriptions: [
+        "Entreprise dans le secteur de la vantellerie.",
+        "Conception réalisée avec le logiciel Solidworks + EPDM.",
+        " Conception de vannes secteur, batardeaux pour le Grand Paris.",
+        " Création d'outils d'optimisation du temps de conception via Excel.",
+      ],
+      id: 4,
+    },
+    {
+      title: "Dessinateur industriel CAO",
+      dates: "fécvrier 2019 - septembre 2019",
+      duration: "8 mois",
+      place: "Sartrouville",
+      client: {
+        name: "Electric Station Climatisation",
+        href: "https://shop.autoclima.com/fr",
+      },
+      descriptions: [
+        "Entreprise dans le secteur de la climatisation embarquée.",
+        "Conception réalisée avec le logiciel Solidworks + EPDM.",
+        "Conception d'une unité HVAC sur le toit d'un véhicule électrique (Projet LOHR Strasbourg)",
+      ],
+      id: 3,
+    },
+    {
+      title: "Dessinateur industriel CAO",
+      dates: "juin 2016 - fécvrier 2019",
+      duration: "2 ans 9 mois",
+      place: "Suresnes",
+      client: {
+        name: "KAEFER WANNER",
+        href: "https://www.kaeferwanner.fr/",
+      },
+      descriptions: [
+        "Conception d'isolation thermique dans le secteur du nucléaire ",
+        "Projet Barracuda (DGA sous-marin) conception du calorifuge d'un générateur de vapeur",
+        "Projet CEPR (DGA) conception du calorifuge d'un banc d'essai",
+        "Méthode (PZR EH, Flamanville) réalisation d'une procédure de montage d'une armature de pressuriseur<br>Conception réalisé avec le logiciel Solidworks + EPDM",
+      ],
       id: 2,
     },
     {
-      title: "Projeteur",
-      dates: "Janvier 2019 - Aout 2021",
-      subTitle: "Eragny",
-      text: "Dessins sur solid works",
-      skills: ["solidworks", "thermodynamic des fluildes"],
-      id: 3,
+      title: "Dessinateur mécanique",
+      dates: "Octobre 2012 - juin 2016",
+      duration: "3 ans 9 mois",
+      place: "Nantes",
+      descriptions: ["Secteur : BTP, Ferroviaire, Naval"],
+      id: 1,
     },
   ];
-  const [currentSkils, setCurretnItems] = useState(items);
-
-  const [availableSkills, setAvailableSkills] = useState(
-    flow(flatten, uniq)(items.map((i) => i.skills))
-  );
-  const [skillFiltred, setSkillFiltred] = useState<string[]>([]);
-
-  const updatedTimeLine = (sills: string[]) => {
-    const filtredItems = items.filter((item) => {
-      return sills.reduce((acc: boolean, s) => {
-        return item.skills.includes(s) && acc;
-      }, true);
-    });
-    setCurretnItems(filtredItems);
-  };
-
-  const onClickSkill = (skill: string) => {
-    if (!skillFiltred.includes(skill)) {
-      const newSkills = [...skillFiltred, skill];
-      setSkillFiltred(newSkills);
-      updatedTimeLine(newSkills);
-      updateAvailableSkills();
-    } else {
-      removeSkill(skill);
-    }
-  };
-
-  const removeSkill = (skill: string) => {
-    const newSkills = skillFiltred.filter((s) => s !== skill);
-    setSkillFiltred(newSkills);
-    updatedTimeLine(newSkills);
-    updateAvailableSkills();
-  };
-
-  const updateAvailableSkills = () => {
-    setAvailableSkills(
-      flow(
-        flatten,
-        uniq
-      )(items.map((i) => i.skills)).filter((s) => !skillFiltred.includes(s))
-    );
-  };
 
   return (
     <>
       <Head>
         <meta key="no-folow" name="robots" content="noindex, follow" />
       </Head>
-      <Layout noPadding={false}>
-        <div>
-          <h1>Mon parcours</h1>
-          <div>
-            {skillFiltred.map((skill) => (
-              <span key={skill} onClick={() => removeSkill(skill)}>
-                {skill}
-              </span>
-            ))}
+      <Layout noPadding={true}>
+        <div className={style.wrapper}>
+          <div className={style.container}>
+            <h1 className={style.title}>Mon parcours</h1>
+            <div>
+              {items.map((experience) => (
+                <>
+                  <Experience experience={experience} />
+                  <Hr />
+                </>
+              ))}
+            </div>
           </div>
         </div>
       </Layout>

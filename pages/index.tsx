@@ -86,7 +86,6 @@ export default function Home() {
               </div>
             </section>
           </div>
-          <ContactForm />
         </>
       </Layout>
     </>
